@@ -191,7 +191,7 @@ li { margin-bottom: 0.6rem; }
 .card-img {
   width: 100%;
   height: auto; 
-  max-height: 280px; 
+  max-height: 350px; /* Increased this to make images taller */
   object-fit: cover; 
   border-radius: 8px;
   margin-bottom: 1.5rem;
@@ -249,8 +249,8 @@ li { margin-bottom: 0.6rem; }
 /* Cards */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Increased from 300px to make cards wider */
+  gap: 2rem; /* Increased the gap slightly so the bigger cards have room to breathe */
   margin-top: 2rem;
 }
 
