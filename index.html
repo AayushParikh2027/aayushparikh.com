@@ -30,14 +30,16 @@
     <div class="hero-wrapper reveal">
       <div class="hero-text">
         <h2 style="font-size: 3rem; margin-bottom: 1rem;">Engineering the Future.</h2>
-        <p style="font-size: 1.2rem;">Hi, I'm Aayush Parikh. I am a senior at Westwood High IB World School bridging the gap between rigorous STEM academics and elite athletics. My dad, a Senior Digital Designer for Mixed-Signal SoCs, inspired my love for engineering and problem-solving. From building robots in middle school to competing in five-hour tennis matches, I've learned that patience, precision, and resilience drive success.</p>
+        <p style="font-size: 1.2rem;">Hi, I'm Aayush Parikh. I am a senior at Westwood High IB World School with a deep passion for STEM, dedicated to exploring complex problems through engineering and mathematics.</p>
+        
+        <p style="font-size: 1.2rem;">My dad, a Senior Digital Designer for Mixed-Signal SoCs, inspired my love for problem-solving early on. From building robots in middle school to optimizing traffic models today, I've learned that patience, precision, and resilience drive true success.</p>
         
         <a href="academics.html" class="button" style="display: inline-block; background: var(--accent-gradient); color: white; padding: 0.8rem 2rem; border-radius: 30px; font-weight: 600; margin-top: 1rem; box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3);">Explore My Work</a>
       </div>
       
       <div class="hero-visual">
         <div class="image-frame">
-          <img src="profile.jpg" alt="Aayush Parikh">
+          <img src="profile.jpg" alt="Headshot of Aayush Parikh">
         </div>
       </div>
     </div>
@@ -67,12 +69,13 @@
   <button id="backToTop" title="Back to top" aria-label="Scroll back to top">↑</button>
 
   <script>
-    // Theme Toggle Logic
     const themeToggle = document.getElementById('themeToggle');
     const html = document.documentElement;
-    const savedTheme = localStorage.getItem('theme') || 'dark';
+    // Defaulting to light theme based on feedback
+    const savedTheme = localStorage.getItem('theme') || 'light';
     html.setAttribute('data-theme', savedTheme);
     themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+    
     themeToggle.addEventListener('click', () => {
       const newTheme = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
       html.setAttribute('data-theme', newTheme);
@@ -80,12 +83,10 @@
       themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
     });
 
-    // Back to Top Logic
     const backToTopButton = document.getElementById('backToTop');
     window.addEventListener('scroll', () => backToTopButton.classList.toggle('show', window.scrollY > 300));
     backToTopButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-    // Scroll Progress Bar Logic
     window.addEventListener('scroll', () => {
       const progressBar = document.getElementById('scrollProgress');
       if (progressBar) {
@@ -96,12 +97,8 @@
       }
     });
 
-    // Advanced Scroll Reveal Animation
     const revealElements = document.querySelectorAll('.reveal');
-    const revealOptions = {
-      threshold: 0.15,
-      rootMargin: "0px 0px -50px 0px"
-    };
+    const revealOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
     const revealOnScroll = new IntersectionObserver(function(entries, observer) {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
