@@ -83,14 +83,13 @@
     }, revealOptions);
     revealElements.forEach(el => revealOnScroll.observe(el));
 
-    // Dynamic Lightbox Logic
+    // Refined Dynamic Lightbox Logic
     const lightbox = document.createElement('div');
     lightbox.id = 'lightbox-modal';
     lightbox.innerHTML = `<button id="lightbox-close" aria-label="Close modal">×</button><div id="lightbox-body"></div>`;
     document.body.appendChild(lightbox);
     
     const lightboxBody = document.getElementById('lightbox-body');
-    const lightboxClose = document.getElementById('lightbox-close');
 
     const expandables = document.querySelectorAll('.card-img, .image-frame img, table');
     expandables.forEach(el => {
@@ -112,10 +111,11 @@
       document.body.style.overflow = '';
     };
 
-    lightboxClose.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox || e.target.id === 'lightbox-body') closeLightbox();
+    lightbox.addEventListener('click', () => {
+      if (window.getSelection().toString().length > 0) return;
+      closeLightbox();
     });
+
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
     });

@@ -68,6 +68,7 @@ h1, h2, h3, .logo {
 h1, h2 {
   background: var(--accent-gradient);
   -webkit-background-clip: text;
+  background-clip: text; 
   -webkit-text-fill-color: transparent;
   display: inline-block;
   margin-bottom: 1.5rem;
@@ -384,20 +385,27 @@ table.expandable:hover {
   pointer-events: none;
   transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   padding: 2rem;
+  cursor: zoom-out; /* Changes cursor to indicate clicking anywhere closes it */
 }
 #lightbox-modal.active {
   opacity: 1;
   pointer-events: auto;
 }
 #lightbox-modal .lightbox-content {
+  cursor: auto; 
   max-width: 90vw;
   max-height: 90vh;
   transform: scale(0.95);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   border-radius: 12px;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-  background: var(--bg-surface); /* Necessary so transparent tables look right */
+  background: var(--bg-surface); 
   overflow: auto;
+}
+#lightbox-modal table.lightbox-content {
+  width: auto; /* Fixes the bug where tables stretch too far in the modal */
+  min-width: 50vw;
+  margin: 0 auto;
 }
 #lightbox-modal.active .lightbox-content {
   transform: scale(1);
@@ -405,6 +413,7 @@ table.expandable:hover {
 #lightbox-modal img.lightbox-content {
   background: transparent;
   object-fit: contain;
+  cursor: zoom-out; /* Clicking the image itself will close it */
 }
 #lightbox-close {
   position: absolute;
