@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio of Aayush Parikh: Senior at Westwood High IB World School, published ML researcher, and top 25 Texas varsity tennis player.">
+  <meta name="description" content="Contact Aayush Parikh.">
   <title>Contact | Aayush Parikh</title>
   <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -27,13 +27,13 @@
   
   <main class="reveal" style="text-align: center; max-width: 600px; padding-top: 5rem;">
     <h2>Let's Connect</h2>
-    <p>Thank you for visiting my website. I'm always open to connecting about tennis, academics, or new opportunities. I aim to respond within a few days.</p>
+    <p>Thank you for visiting my website. I'm open to connecting about tennis or academics. I aim to respond within a few days.</p>
     
     <div class="card" style="margin-top: 2rem; text-align: left;">
       <ul style="list-style: none; padding: 0;">
         <li style="margin-bottom: 1rem;"><strong>Phone:</strong> +1 (940) 312-9917</li>
-        <li style="margin-bottom: 1rem;"><strong>Email:</strong> <a href="mailto:parikhaayush2027@gmail.com">parikhaayush2027@gmail.com</a> (or parikhaayush@gmail.com)</li>
-        <li style="margin-bottom: 1rem;"><strong>Professional:</strong> <a href="https://linkedin.com/in/parikh-aayush" target="_blank">LinkedIn Profile</a></li>
+        <li style="margin-bottom: 1rem;"><strong>Email:</strong> <a href="mailto:parikhaayush2027@gmail.com">parikhaayush2027@gmail.com</a></li>
+        <li style="margin-bottom: 1rem;"><strong>Professional:</strong> <a href="https://www.linkedin.com/in/parikhaayush/" target="_blank">LinkedIn Profile</a></li>
         <li style="margin-bottom: 1rem;"><strong>Development:</strong> <a href="https://github.com/your-github-username" target="_blank">GitHub Profile</a></li>
         <li><strong>Athletics:</strong> <a href="https://www.tennisrecruiting.net/player.asp?id=985097" target="_blank">Tennis Recruiting Profile</a></li>
       </ul>
@@ -45,9 +45,11 @@
   <script>
     const themeToggle = document.getElementById('themeToggle');
     const html = document.documentElement;
-    const savedTheme = localStorage.getItem('theme') || 'dark';
+    // Defaulting to light theme
+    const savedTheme = localStorage.getItem('theme') || 'light';
     html.setAttribute('data-theme', savedTheme);
     themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+    
     themeToggle.addEventListener('click', () => {
       const newTheme = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
       html.setAttribute('data-theme', newTheme);
@@ -55,7 +57,6 @@
       themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
     });
     
-    // Scroll Progress Bar Logic
     window.addEventListener('scroll', () => {
       const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
       const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -63,12 +64,8 @@
       document.getElementById('scrollProgress').style.width = scrolled + '%';
     });
 
-    // Advanced Scroll Reveal Animation
     const revealElements = document.querySelectorAll('.reveal');
-    const revealOptions = {
-      threshold: 0.15,
-      rootMargin: "0px 0px -50px 0px"
-    };
+    const revealOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
     const revealOnScroll = new IntersectionObserver(function(entries, observer) {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
