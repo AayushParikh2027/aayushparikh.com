@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio of Aayush Parikh: Senior at Westwood High IB World School, published ML researcher, and top 25 Texas varsity tennis player.">
+  <meta name="description" content="Academic profile of Aayush Parikh.">
   <title>Academics | Aayush Parikh</title>
   <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -27,10 +27,11 @@
   
   <main>
     <h2 class="reveal">Academic Profile</h2>
-    <p class="reveal">I approach academics with the same mindset I bring to tennis: consistent effort and curiosity. I enjoy the logic behind mathematics and the creativity within engineering. Both remind me that the best solutions come from patience and precision.</p>
+    <p class="reveal">I approach my academic pursuits with unwavering dedication and a deep curiosity for how things work. Whether delving into the logic of mathematics or the creative problem-solving of engineering, I believe the best solutions stem from patience and precision.</p>
     
     <div class="card-grid reveal">
       <div class="card">
+        <img src="school-photo.jpg" alt="Westwood High School" class="card-img">
         <h3>Westwood High IB World School</h3>
         <ul>
           <li><strong>GPA:</strong> 3.93/4.0 UW | 5.49/5.0 W</li>
@@ -40,25 +41,29 @@
         </ul>
       </div>
       <div class="card">
+        <img src="coursework-photo.jpg" alt="Coursework and Studying" class="card-img">
         <h3>Coursework & APs</h3>
         <ul>
           <li><strong>Score of 5:</strong> Calc BC, Precalculus, Physics 1, Statistics, Human Geography</li>
           <li><strong>Score of 4:</strong> Computer Science A, English Language</li>
           <li><strong>Math Foundation:</strong> Algebra 1 & 2, Geometry, Multivariable Calculus</li>
         </ul>
+        <br>
+        <p><strong>Current Advanced Coursework:</strong> AP Physics C (Mechanics & E&M), AP Chemistry, AP Economics (Micro & Macro), AP Government, Multivariable Calculus, Digital Electronics, Advanced Computer Science 1, and AP English Literature.</p>
       </div>
     </div>
-
-    <h2 class="reveal">Current Advanced Coursework</h2>
-    <p class="reveal">AP Physics C (Mechanics & E&M), AP Chemistry, AP Economics (Micro & Macro), AP Government, Multivariable Calculus, Digital Electronics, Advanced Computer Science 1, and AP English Literature.</p>
 
     <h2 class="reveal">Research & Internships</h2>
     <div class="card-grid reveal">
       <div class="card">
+        <img src="research-photo.jpg" alt="Machine Learning Research" class="card-img">
         <h3>Published ML Research</h3>
-        <p><strong>Oxford JSS Publication:</strong> <em>"Reduction of Red Light Waiting Times Using An Adaptive Traffic Optimization Model"</em>. Developed a simulation framework to optimize traffic signal timing using machine learning (Oct 2025).</p>
+        <p><strong>Oxford JSS Publication:</strong> <em>"Reduction of Red Light Waiting Times Using An Adaptive Traffic Optimization Model"</em>.</p>
+        <p>Developed a simulation framework to optimize traffic signal timing using machine learning (Oct 2025).</p>
+        <a href="#" target="_blank" class="button" style="display: inline-block; padding: 0.5rem 1rem; border: 1px solid var(--neon-cyan); border-radius: 20px; margin-top: 1rem;">Read the Publication ↗</a>
       </div>
       <div class="card">
+        <img src="internship-photo.jpg" alt="Engineering Internships" class="card-img">
         <h3>Engineering Internships</h3>
         <ul>
           <li><strong>MySafeSpace:</strong> Product/UI Intern. Developed and presented a UI prototype directly to the founder.</li>
@@ -78,6 +83,12 @@
         <h3>Hardware Integration</h3>
         <p>Designed and built embedded hardware projects using Python, Raspberry Pi, digital logic, sensors, and programmable electronics, exploring how software can interact with the real world.</p>
       </div>
+    </div>
+    
+    <h2 class="reveal">Featured Work & Insights</h2>
+    <div class="card reveal">
+      <h3>MIT Course Insight: Unmanned Air Systems</h3>
+      <p><em>Replace this text with a short blog paragraph, an embedded code snippet from GitHub, or a key takeaway from your MIT Beaver Works course. This shows depth beyond a standard resume!</em></p>
     </div>
 
     <h2 class="reveal">Technical Skills & Certifications</h2>
@@ -103,9 +114,11 @@
   <script>
     const themeToggle = document.getElementById('themeToggle');
     const html = document.documentElement;
-    const savedTheme = localStorage.getItem('theme') || 'dark';
+    // Defaulting to light theme
+    const savedTheme = localStorage.getItem('theme') || 'light';
     html.setAttribute('data-theme', savedTheme);
     themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+    
     themeToggle.addEventListener('click', () => {
       const newTheme = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
       html.setAttribute('data-theme', newTheme);
@@ -116,7 +129,6 @@
     window.addEventListener('scroll', () => backToTopButton.classList.toggle('show', window.scrollY > 300));
     backToTopButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     
-    // Scroll Progress Bar Logic
     window.addEventListener('scroll', () => {
       const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
       const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -124,12 +136,8 @@
       document.getElementById('scrollProgress').style.width = scrolled + '%';
     });
 
-    // Advanced Scroll Reveal Animation
     const revealElements = document.querySelectorAll('.reveal');
-    const revealOptions = {
-      threshold: 0.15,
-      rootMargin: "0px 0px -50px 0px"
-    };
+    const revealOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
     const revealOnScroll = new IntersectionObserver(function(entries, observer) {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
