@@ -2,33 +2,23 @@
    Ultra-Premium Design Tokens
 ========================== */
 :root {
-  /* Premium Slate/Zinc Backgrounds */
-  --bg-base: #09090b; /* Zinc 950 */
-  --bg-surface: #18181b; /* Zinc 900 */
-  
-  /* Sophisticated Tech Gradients (Sky Blue to Indigo) */
+  --bg-base: #09090b; 
+  --bg-surface: #18181b; 
   --neon-cyan: #38bdf8;
   --neon-blue: #60a5fa;
   --neon-purple: #818cf8;
   --accent-gradient: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
-  
-  /* Premium Glassmorphism */
   --glass-bg: rgba(255, 255, 255, 0.02);
   --glass-border: rgba(255, 255, 255, 0.05);
   --glass-hover: rgba(255, 255, 255, 0.06);
   --glass-blur: blur(20px);
   --header-glass: rgba(9, 9, 11, 0.65);
-  
-  /* Elegant Typography Colors */
-  --text-main: #f8fafc; /* Crisp White */
-  --text-muted: #a1a1aa; /* Zinc 400 */
-  
-  /* Ambient Mesh Opacity */
+  --text-main: #f8fafc; 
+  --text-muted: #a1a1aa; 
   --mesh-opacity: 0.03;
 }
 
 [data-theme="light"] {
-  /* Minimalist Light Mode (Apple Aesthetic) */
   --bg-base: #fafafa;
   --bg-surface: #ffffff;
   --glass-bg: rgba(255, 255, 255, 0.7);
@@ -43,9 +33,8 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
-/* Custom Text Selection */
 ::selection {
-  background: rgba(56, 189, 248, 0.3); /* Matches your neon-cyan */
+  background: rgba(56, 189, 248, 0.3); 
   color: var(--text-main);
   text-shadow: none;
 }
@@ -81,7 +70,7 @@ h1, h2 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 a { 
@@ -93,9 +82,7 @@ a:hover {
   color: var(--neon-purple); 
 }
 
-/* ==========================
-   Navigation (Floating Header)
-========================== */
+/* Navigation */
 header {
   position: sticky;
   top: 0;
@@ -174,9 +161,7 @@ header h1 {
   background: var(--glass-hover);
 }
 
-/* ==========================
-   Scroll Reveal Animations
-========================== */
+/* Animations */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -188,25 +173,31 @@ header h1 {
   transform: translateY(0);
 }
 
-/* ==========================
-   Main Content & Spacing
-========================== */
+/* Main Content */
 main {
   flex: 1;
   width: 100%;
-  max-width: 1100px; /* Slightly narrower for easier reading */
+  max-width: 1100px;
   margin: 0 auto;
   padding: 5rem 5vw; 
 }
 
 h2 { font-size: 1.8rem; margin-top: 4rem; letter-spacing: -0.01em; }
 p, ul { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; font-weight: 300; }
-ul { padding-left: 1.5rem; }
+ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }
 li { margin-bottom: 0.6rem; }
 
-/* ==========================
-   Hero Section 
-========================== */
+/* Images & Media */
+.card-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  background-color: var(--glass-border);
+}
+
+/* Hero Section */
 .hero-wrapper {
   display: flex;
   align-items: center;
@@ -222,8 +213,8 @@ li { margin-bottom: 0.6rem; }
   width: 100%;
   max-width: 320px;
   aspect-ratio: 1 / 1;
-  border-radius: 30px; /* Smoother curve */
-  padding: 2px; /* Thinner, more elegant border */
+  border-radius: 30px; 
+  padding: 2px; 
   background: var(--accent-gradient);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   animation: float 8s ease-in-out infinite;
@@ -243,7 +234,6 @@ li { margin-bottom: 0.6rem; }
   100% { transform: translateY(0px); }
 }
 
-/* CTA Button Override */
 .button[style*="background: var(--accent-gradient)"] {
   background: var(--text-main) !important;
   color: var(--bg-base) !important;
@@ -255,9 +245,7 @@ li { margin-bottom: 0.6rem; }
   opacity: 0.9 !important;
 }
 
-/* ==========================
-   Glassmorphism Cards
-========================== */
+/* Cards */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -286,19 +274,12 @@ li { margin-bottom: 0.6rem; }
 
 .card h3 { 
   font-size: 1.25rem; 
-  margin-bottom: 0.8rem; 
+  margin-bottom: 1rem; 
   color: var(--text-main); 
   font-weight: 500;
 }
 
-.card p {
-  font-size: 0.95rem;
-  margin-bottom: 1rem;
-}
-
-/* ==========================
-   Futuristic Tables
-========================== */
+/* Tables */
 table {
   width: 100%;
   border-collapse: separate;
@@ -316,9 +297,7 @@ td { border-bottom: 1px solid var(--glass-border); background: transparent; }
 tr:last-child td { border-bottom: none; }
 td strong { color: var(--text-main); font-weight: 500; }
 
-/* ==========================
-   Back to Top Button (Floating Bottom Right)
-========================== */
+/* Back to Top */
 #backToTop {
   position: fixed;
   bottom: 30px;
@@ -352,9 +331,6 @@ td strong { color: var(--text-main); font-weight: 500; }
   pointer-events: auto;
 }
 
-/* ==========================
-   Responsive Mobile Fixes
-========================== */
 @media (max-width: 900px) {
   .hero-wrapper { flex-direction: column-reverse; text-align: center; gap: 3rem; margin-bottom: 3rem;}
   .image-frame { max-width: 220px; }
@@ -363,15 +339,14 @@ td strong { color: var(--text-main); font-weight: 500; }
   main { padding: 3rem 5vw; }
 }
 
-/* Scroll Progress Bar */
 #scrollProgress {
   position: fixed;
   top: 0;
   left: 0;
-  height: 4px; /* Slightly thicker so it's easier to see */
+  height: 4px;
   background: var(--accent-gradient);
   width: 0%;
   z-index: 9999;
   box-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
-  transition: width 0.1s ease-out; /* Makes the bar glide smoothly */
+  transition: width 0.1s ease-out; 
 }
