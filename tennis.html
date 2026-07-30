@@ -29,7 +29,7 @@
     <h2 class="reveal">Varsity Tennis Journey</h2>
     <div class="card-grid reveal">
       <div class="card">
-        <img src="tennis-action-1.jpg" alt="Aayush playing tennis" class="card-img">
+        <img src="images/tennis-action-1.jpg" alt="Aayush playing tennis" class="card-img">
         <h3>Accolades & Sponsorships</h3>
         <ul>
           <li>Ranked among the Top 25 junior players in Texas since age 10</li>
@@ -40,7 +40,7 @@
         </ul>
       </div>
       <div class="card">
-        <img src="tennis-coaching.jpg" alt="Aayush coaching tennis" class="card-img">
+        <img src="images/tennis-coaching.jpg" alt="Aayush coaching tennis" class="card-img">
         <h3>Coaching Experience</h3>
         <ul>
           <li><strong>Summer Camp Coach:</strong> Trained beginner and intermediate players in fundamentals and match readiness.</li>
@@ -51,6 +51,8 @@
 
     <h2 class="reveal">High School Record</h2>
     <p class="reveal">Texas high school tennis is split into two distinct formats: the Fall Team Season and the Spring Solo Season. Below is my progression through both.</p>
+    
+    <img src="images/tennis-team.jpg" alt="Westwood High School State Championship Tennis Team" class="card-img reveal" style="margin-bottom: 2.5rem; border-radius: 12px;">
     
     <table class="reveal">
       <thead>
@@ -155,6 +157,7 @@
     
     const lightboxBody = document.getElementById('lightbox-body');
 
+    // Make sure to select all images with the card-img class
     const expandables = document.querySelectorAll('.card-img, .image-frame img, table');
     expandables.forEach(el => {
       el.classList.add('expandable');
