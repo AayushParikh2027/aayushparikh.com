@@ -52,7 +52,7 @@
     <h2 class="reveal">High School Record</h2>
     <p class="reveal">Texas high school tennis is split into two distinct formats: the Fall Team Season and the Spring Solo Season. Below is my progression through both.</p>
     
-    <img src="images/district-champs.jpg" alt="Aayush and his brother holding the 2025 District 25-AAAAAA Team Tennis Champions plaque" class="card-img reveal" style="margin-bottom: 2.5rem; border-radius: 12px;">
+    <img src="images/district-champs.jpg" alt="Aayush and his brother holding the 2025 District 25-AAAAAA Team Tennis Champions plaque" class="card-img reveal" style="margin-bottom: 2.5rem; border-radius: 12px; max-height: 600px; object-fit: contain;">
     
     <table class="reveal">
       <thead>
@@ -157,7 +157,7 @@
     
     const lightboxBody = document.getElementById('lightbox-body');
 
-    // Make sure to select all images with the card-img class
+    // Select all images with the card-img class
     const expandables = document.querySelectorAll('.card-img, .image-frame img, table');
     expandables.forEach(el => {
       el.classList.add('expandable');
